@@ -1,0 +1,3 @@
+[submodule "demo/runtime/printf"]
+        path = demo/runtime/printf
+        url = https://github.com/eyalroz/printf
