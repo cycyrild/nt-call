@@ -1,6 +1,6 @@
 #include <array>
 #include <cstdio>
-#include <freestanding-runtime/printf.hh>
+#include "printf.hh"
 #include <nt_call.hh>
 #include <ntdll.h>
 
