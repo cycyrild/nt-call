@@ -6,4 +6,4 @@ ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cd "$ROOT_DIR/demo"
 
 cmake --preset default
-cmake --build --preset default --clean-first
+cmake --build --preset default --clean-first -v

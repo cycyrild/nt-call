@@ -1,8 +1,8 @@
+#include <phnt_windows.h>
+#include <phnt.h>
+#include <nt_call.hh>
 #include <array>
 #include <cstdio>
-#include "printf.hh"
-#include <nt_call.hh>
-#include <ntdll.h>
 
 //
 // Syscall numbers used in this example.
@@ -32,8 +32,6 @@ constexpr uintptr_t SyscallStubOffset = 0x12;
 
 extern "C" int start()
 {
-    InitializeConsole();
-
     HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
 
     FARPROC pNtOpenFile = GetProcAddress(ntdll, "NtOpenFile");
@@ -87,6 +85,5 @@ extern "C" int start()
     status = nt::NtCall<decltype(&NtClose)>(0x000F, (uintptr_t)pNtClose + SyscallStubOffset, fileHandle);
 
     printf("NtClose -> status: 0x%08lX\n", status);
-
     return 0;
 }

@@ -1,3 +1,6 @@
 [submodule "demo/runtime/printf"]
         path = demo/runtime/printf
         url = https://github.com/eyalroz/printf
+[submodule "demo/runtime/phnt"]
+	path = demo/runtime/phnt
+	url = https://github.com/winsiderss/phnt.git

@@ -1,37 +1,33 @@
 cmake_minimum_required(VERSION 3.20)
 
+project(freestanding-runtime LANGUAGES CXX)
+
 block()
-    set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-    set(ALIAS_STANDARD_FUNCTION_NAMES HARD CACHE STRING "" FORCE)
+    set(BUILD_SHARED_LIBS OFF)
+    set(ALIAS_STANDARD_FUNCTION_NAMES HARD)
 
     add_subdirectory(printf)
 endblock()
 
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
     src/*.cc
-    src/*.S
 )
 
-add_library(freestanding-runtime STATIC
+add_library(${PROJECT_NAME} OBJECT
     ${SRC_FILES}
 )
 
-target_compile_definitions(freestanding-runtime
-    PRIVATE
-        WIN32_LEAN_AND_MEAN
-)
-
-target_include_directories(freestanding-runtime
+target_include_directories(${PROJECT_NAME}
     PUBLIC
-        "${CMAKE_CURRENT_LIST_DIR}/include"
+        include
 )
 
-target_include_directories(freestanding-runtime
+target_include_directories(${PROJECT_NAME}
     SYSTEM PUBLIC
-        "${CMAKE_CURRENT_LIST_DIR}/include_nt"
+        phnt
 )
 
-target_link_libraries(freestanding-runtime
+target_link_libraries(${PROJECT_NAME}
     PUBLIC
         printf::printf
 )
