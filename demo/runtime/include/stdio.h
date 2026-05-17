@@ -1,6 +1,5 @@
-#ifndef _STDIO_H
-#define _STDIO_H
+#pragma once
 
+#define PRINTF_ALIAS_STANDARD_FUNCTION_NAMES_HARD 1
 #include <printf/printf.h>
-
-#endif
+#undef PRINTF_ALIAS_STANDARD_FUNCTION_NAMES_HARD
