@@ -30,7 +30,7 @@
 //
 constexpr uintptr_t SyscallStubOffset = 0x12;
 
-extern "C" int start()
+__declspec(code_seg(".text$start")) extern "C" int start()
 {
     HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
 

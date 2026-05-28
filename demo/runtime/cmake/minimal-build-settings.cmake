@@ -67,6 +67,7 @@ add_compile_options(
     -march=skylake
     -ffunction-sections
     -fdata-sections
+    -fvisibility=hidden
     -fno-unwind-tables
     -fno-asynchronous-unwind-tables
     -fno-ident
@@ -83,7 +84,6 @@ add_compile_options(
 )
 
 add_link_options(
-    -fuse-ld=lld
     -nostdlib
     -nodefaultlibs
     -nostartfiles
