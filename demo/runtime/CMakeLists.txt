@@ -18,18 +18,15 @@ add_library(${PROJECT_NAME} OBJECT
 )
 
 target_include_directories(${PROJECT_NAME}
+    SYSTEM PUBLIC
+        phnt
     PUBLIC
         include
 )
 
-target_include_directories(${PROJECT_NAME}
-    SYSTEM PUBLIC
-        phnt
-)
-
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        printf::printf
+        printf
 )
 
 target_compile_options(printf PRIVATE
