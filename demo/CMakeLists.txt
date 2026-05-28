@@ -20,7 +20,7 @@ add_executable(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     nt-call
-    freestanding-runtime
+    nt-crtless-runtime
 )
 
 target_link_options(${PROJECT_NAME} PRIVATE

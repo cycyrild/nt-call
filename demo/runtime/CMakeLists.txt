@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(freestanding-runtime LANGUAGES CXX)
+project(nt-crtless-runtime LANGUAGES CXX)
 
 block()
     set(BUILD_SHARED_LIBS OFF)
