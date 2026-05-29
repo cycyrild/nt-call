@@ -1,6 +1,6 @@
-[submodule "demo/runtime/printf"]
-        path = demo/runtime/printf
-        url = https://github.com/eyalroz/printf
-[submodule "demo/runtime/phnt"]
-	path = demo/runtime/phnt
+[submodule "demo/nt-crtless-runtime/printf"]
+	path = demo/nt-crtless-runtime/printf
+	url = https://github.com/eyalroz/printf
+[submodule "demo/nt-crtless-runtime/phnt"]
+	path = demo/nt-crtless-runtime/phnt
 	url = https://github.com/winsiderss/phnt.git
