@@ -8,7 +8,7 @@ project(
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/.." "${CMAKE_CURRENT_BINARY_DIR}/nt-call")
-add_subdirectory(runtime)
+add_subdirectory(nt-crtless-runtime)
 
 separate_arguments(NT_CALL_DEMO_STANDARD_LIBRARIES NATIVE_COMMAND "${CMAKE_CXX_STANDARD_LIBRARIES}")
 list(REMOVE_ITEM NT_CALL_DEMO_STANDARD_LIBRARIES -loldnames)

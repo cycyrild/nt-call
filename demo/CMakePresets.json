@@ -5,7 +5,7 @@
             "name": "default",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/../build/demo",
-            "toolchainFile": "${sourceDir}/runtime/cmake/minimal-build-settings.cmake",
+            "toolchainFile": "${sourceDir}/nt-crtless-runtime/cmake/minimal-build-settings.cmake",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             }
