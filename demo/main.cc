@@ -32,11 +32,9 @@ constexpr uintptr_t SyscallStubOffset = 0x12;
 
 __declspec(code_seg(".text$start")) extern "C" int start()
 {
-    HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
-
-    FARPROC pNtOpenFile = GetProcAddress(ntdll, "NtOpenFile");
-    FARPROC pNtReadFile = GetProcAddress(ntdll, "NtReadFile");
-    FARPROC pNtClose = GetProcAddress(ntdll, "NtClose");
+    auto pNtOpenFile = &NtOpenFile;
+    auto pNtReadFile = &NtReadFile;
+    auto pNtClose = &NtClose;
 
     NTSTATUS status;
 

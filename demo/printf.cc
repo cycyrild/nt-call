@@ -4,8 +4,22 @@
 
 extern "C" void putchar_(char c)
 {
-    DWORD written;
+    IO_STATUS_BLOCK iosb;
     HANDLE consoleHandle = NtCurrentPeb()->ProcessParameters->StandardOutput;
 
-    WriteFile(consoleHandle, &c, 1, &written, nullptr);
+    NtWriteFile(consoleHandle, nullptr, nullptr, nullptr, &iosb, (PVOID)&c, 1, nullptr, nullptr);
+}
+
+extern "C" int puts(const char *str)
+{
+    IO_STATUS_BLOCK iosb;
+    HANDLE consoleHandle = NtCurrentPeb()->ProcessParameters->StandardOutput;
+
+    while (*str)
+    {
+        NtWriteFile(consoleHandle, nullptr, nullptr, nullptr, &iosb, (PVOID)str, 1, nullptr, nullptr);
+        str++;
+    }
+
+    return 0;
 }
